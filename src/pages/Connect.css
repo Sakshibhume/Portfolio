@@ -1,0 +1,259 @@
+:root {
+  --primary: #64ffda;
+  --primary-dark: #52d1b8;
+  --bg-dark: #0a192f;
+  --text: #e6f1ff;
+  --card-bg: rgba(100, 255, 218, 0.1);
+}
+
+/* Scroll container */
+.connect-scroll-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #777147 0%, #18738c 100%);
+  position: relative;
+}
+
+/* Main page styling */
+.connect-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Profile section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.profile-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image-container {
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-section:hover .profile-image {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+}
+
+.text-section {
+  color: var(--text);
+  text-align: left;
+}
+.text-section {
+  text-align: center; /* Center align text */
+  margin: 20px 0; /* Add margin for spacing */
+}
+
+.build-text {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.arrow-img {
+  width: 2em; /* Set width to match text size */
+  height: 2em; /* Set height to match text size */
+  margin-left: 5px; /* Add space between text and arrow */
+  vertical-align: middle; /* Align with text */
+}
+
+
+.text-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.lightbulb-icon {
+  color: #ffcc00;
+  margin-left: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.build-text {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+/* Social cards */
+.social-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 0.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.social-card:hover::before {
+  left: 100%;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(100, 255, 218, 0.3);
+  background: rgba(100, 255, 218, 0.2);
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+  transform: scale(1.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .profile-image-container {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .text-section {
+    text-align: center;
+  }
+
+  .text-section h2 {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .build-text {
+    font-size: 1.4rem;
+  }
+
+  .social-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-section {
+    padding: 1.2rem;
+  }
+
+  .profile-image-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .text-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .build-text {
+    font-size: 1.2rem;
+  }
+
+  .social-cards {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .social-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.8rem 1rem;
+    min-height: auto;
+  }
+
+  .social-icon {
+    margin-bottom: 0;
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,65 @@
+.tech-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.binary-digit {
+  position: absolute;
+  color: var(--primary);
+  opacity: 0.1;
+  font-family: monospace;
+  animation: float 10s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.circuit-line {
+  position: absolute;
+  background: var(--primary);
+  opacity: 0.05;
+}
+
+.circuit-line.horizontal {
+  height: 1px;
+  width: 100%;
+  top: 30%;
+}
+
+.circuit-line.vertical {
+  width: 1px;
+  height: 100%;
+  left: 40%;
+}
+
+.circuit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
