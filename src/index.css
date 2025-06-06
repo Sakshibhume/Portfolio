@@ -45,7 +45,7 @@ body {
   background: #3e6e45;
   transform: translateY(-2px);
 }
-* Make only specific sections scrollable */
+
 .about {
   height: calc(100vh - 60px); /* Adjust based on your header height */
   overflow-y: auto;
