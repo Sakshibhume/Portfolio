@@ -9,7 +9,6 @@ import documentManagementImg from "../assets/images/projects/document-management
 
 const Projects = () => {
   const projects = [
-    
     {
       title: "Deepfake Image Detection",
       description: "AI-powered application that detects deepfake images using convolutional neural networks.",

@@ -1,26 +1,27 @@
-"use client"
-
-import "./Home.css"
-import React from "react"
+import "./Home.css";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   // Prevent zooming and scrolling
   React.useEffect(() => {
     const disableZoom = (e) => {
-      if (e.touches.length > 1) e.preventDefault()
-    }
-    document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false })
-    document.addEventListener("gesturestart", disableZoom)
-    document.documentElement.style.overflow = "hidden"
-    document.body.style.overflow = "hidden"
+      if (e.touches.length > 1) e.preventDefault();
+    };
+    document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
+    document.addEventListener("gesturestart", disableZoom);
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.removeEventListener("touchmove", (e) => e.preventDefault())
-      document.removeEventListener("gesturestart", disableZoom)
-      document.documentElement.style.overflow = ""
-      document.body.style.overflow = ""
-    }
-  }, [])
+      document.removeEventListener("touchmove", (e) => e.preventDefault());
+      document.removeEventListener("gesturestart", disableZoom);
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   return (
     <section className="home">
@@ -96,18 +97,18 @@ const Home = () => {
               Building intelligent web solutions at the intersection of development and artificial intelligence.
             </p>
             <div className="cta-buttons">
-              <a href="/projects" className="btn primary-btn">
+              <button onClick={() => navigate('/projects')} className="btn primary-btn">
                 View Projects
-              </a>
-              <a href="/skills" className="btn secondary-btn">
+              </button>
+              <button onClick={() => navigate('/skills')} className="btn secondary-btn">
                 About Me
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Home
+export default Home;
