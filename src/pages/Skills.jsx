@@ -1,6 +1,6 @@
-import "./Skills.css"
-import { FaReact, FaNodeJs, FaCode, FaRobot, FaPython, FaGitAlt, FaDownload } from "react-icons/fa"
-import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiGooglecloud, SiMysql } from "react-icons/si"
+import "./Skills.css";
+import { FaReact, FaNodeJs, FaCode, FaRobot, FaPython, FaGitAlt, FaDownload } from "react-icons/fa";
+import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiGooglecloud, SiMysql } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
@@ -16,7 +16,7 @@ const Skills = () => {
     { name: "Git", icon: <FaGitAlt />, color: "#F05032", level: 4 },
     { name: "VS Code", icon: <FaCode />, color: "#007ACC", level: 5 },
     { name: "Google Cloud", icon: <SiGooglecloud />, color: "#4285F4", level: 3 },
-  ]
+  ];
 
   const renderSkillLevel = (level) => {
     return (
@@ -25,8 +25,20 @@ const Skills = () => {
           <div key={i} className={`level-dot ${i < level ? "active" : ""}`} />
         ))}
       </div>
-    )
-  }
+    );
+  };
+
+  const handleDownload = () => {
+    const fileId = '1ZZURwQsGleWB2ftkQrxz5FM3rdCZDoqP';
+    const downloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
+
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = 'Sakshi-Bhume-Resume.pdf'; // You can name the file here
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="skills-page">
@@ -35,7 +47,7 @@ const Skills = () => {
           <div className="skills-header">
             <h2>Technical Skills</h2>
           </div>
-          <a href="/assets/Sakshi-Bhume-Resume.pdf" download className="resume-download-btn">
+          <button onClick={handleDownload} className="resume-download-btn">
             <div className="btn-content">
               <div className="icon-wrapper">
                 <FaDownload className="download-icon" />
@@ -46,7 +58,7 @@ const Skills = () => {
               </div>
             </div>
             <div className="btn-glow"></div>
-          </a>
+          </button>
         </div>
 
         <div className="skills-grid">
@@ -70,7 +82,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
