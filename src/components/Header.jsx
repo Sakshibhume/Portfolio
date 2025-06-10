@@ -1,12 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { HiMenuAlt3, HiX } from "react-icons/hi"
-import { Link } from "react-router-dom"
-import "./Header.css"
+import { useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavLinkClick = () => {
+    setMenuOpen(false); // Close the menu
+  };
 
   return (
     <header className="header">
@@ -23,26 +27,38 @@ const Header = () => {
         <nav className="nav">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={handleNavLinkClick}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/skills">Skills</Link>
+              <Link to="/skills" onClick={handleNavLinkClick}>
+                Skills
+              </Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects" onClick={handleNavLinkClick}>
+                Projects
+              </Link>
             </li>
             <li>
-              <Link to="/connect">Connect</Link>
+              <Link to="/connect" onClick={handleNavLinkClick}>
+                Connect
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
 
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
         {menuOpen ? <HiX /> : <HiMenuAlt3 />}
       </button>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
