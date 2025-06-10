@@ -12,7 +12,7 @@
   background: linear-gradient(135deg, #777147 0%, #18738c 100%);
   padding-top: 120px;
   position: relative;
-  overflow-x: hidden;
+  overflow-x:scroll;
 }
 
 .skills-section {
@@ -25,12 +25,12 @@
   min-height: calc(100vh - 140px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   margin: 1rem;
-  overflow-y: auto;
+  overflow-y:scroll;
 }
 
 /* Hide scrollbar */
 .skills-section::-webkit-scrollbar {
-/*   display: none; */
+  display: none;
 }
 
 .skills-section {
@@ -80,7 +80,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -191,7 +191,7 @@
   opacity: 0;
   transform: scale(0.9) translateY(20px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Shiny Light Flow Animation */
@@ -352,7 +352,7 @@
   .skills-page {
     padding-top: 100px;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   .skills-section {
@@ -415,7 +415,7 @@
   .skills-page {
     padding-top: 90px;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y:scroll;
   }
 
   .skills-section {
