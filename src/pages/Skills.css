@@ -30,7 +30,7 @@
 
 /* Hide scrollbar */
 .skills-section::-webkit-scrollbar {
-  display: none;
+/*   display: none; */
 }
 
 .skills-section {
