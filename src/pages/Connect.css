@@ -78,6 +78,7 @@
   color: var(--text);
   text-align: left;
 }
+
 .text-section {
   text-align: center; /* Center align text */
   margin: 20px 0; /* Add margin for spacing */
@@ -95,7 +96,6 @@
   margin-left: 5px; /* Add space between text and arrow */
   vertical-align: middle; /* Align with text */
 }
-
 
 .text-section h2 {
   font-size: 1.4rem;
@@ -214,6 +214,7 @@
 
   .social-cards {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px; /* Added margin to create space from the header */
   }
 }
 
@@ -242,6 +243,7 @@
   .social-cards {
     grid-template-columns: 1fr;
     gap: 0.8rem;
+    margin-top: 20px; /* Added margin to create space from the header */
   }
 
   .social-card {
