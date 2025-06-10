@@ -14,9 +14,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  touch-action: none;
+  /* touch-action: none; */
   -webkit-user-zoom: none;
   user-zoom: none;
+ 
 }
 
 html,
@@ -32,6 +33,7 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   min-height: 100vh;
+  overflow-y: auto ;
   overscroll-behavior: none;
 }
 
@@ -310,6 +312,9 @@ h2 {
 
 /* Responsive adjustments - Move text higher on mobile */
 @media (max-width: 768px) {
+  body{
+     overflow-y: auto ;
+  }
   .home {
     padding: 0;
     justify-content: center;
@@ -403,6 +408,9 @@ h2 {
 }
 
 @media (max-width: 480px) {
+    body{
+     overflow-y: auto ;
+  }
   .home {
     padding-top: 3rem;
     padding-bottom: 1.5rem;
