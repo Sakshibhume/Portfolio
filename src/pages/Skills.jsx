@@ -1,8 +1,18 @@
+import React, { useEffect } from "react"; // Import useEffect
 import "./Skills.css";
 import { FaReact, FaNodeJs, FaCode, FaRobot, FaPython, FaGitAlt, FaDownload } from "react-icons/fa";
 import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiGooglecloud, SiMysql } from "react-icons/si";
 
 const Skills = () => {
+  useEffect(() => {
+    // Check if the page has been reloaded before
+    const hasReloaded = localStorage.getItem("hasReloaded");
+    if (!hasReloaded) {
+      localStorage.setItem("hasReloaded", "true"); // Set the flag
+      window.location.reload(); // Automatically refresh the page when the component mounts
+    }
+  }, []); // Empty dependency array to run only on mount
+
   const skills = [
     { name: "React", icon: <FaReact />, color: "#61DAFB", level: 5 },
     { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E", level: 5 },
