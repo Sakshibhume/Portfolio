@@ -1,13 +1,23 @@
-import ProjectCard from "../components/ProjectCard"
-import "./Projects.css"
+import React, { useEffect } from "react"; // Import useEffect
+import ProjectCard from "../components/ProjectCard";
+import "./Projects.css";
 
 // Import images
-import expenseTrackerImg from "../assets/images/projects/expense-tracker.png"
-import deepfakeImg from "../assets/images/projects/deepfake.webp"
-import textSummarizationImg from "../assets/images/projects/text-summarization.jpg"
-import documentManagementImg from "../assets/images/projects/document-management.jpg"
+import expenseTrackerImg from "../assets/images/projects/expense-tracker.png";
+import deepfakeImg from "../assets/images/projects/deepfake.webp";
+import textSummarizationImg from "../assets/images/projects/text-summarization.jpg";
+import documentManagementImg from "../assets/images/projects/document-management.jpg";
 
 const Projects = () => {
+  useEffect(() => {
+    // Check if the page has been reloaded before
+    const hasReloaded = localStorage.getItem("projectsHasReloaded");
+    if (!hasReloaded) {
+      localStorage.setItem("projectsHasReloaded", "true"); // Set the flag
+      window.location.reload(); // Automatically refresh the page when the component mounts
+    }
+  }, []); // Empty dependency array to run only on mount
+
   const projects = [
     {
       title: "Deepfake Image Detection",
@@ -37,14 +47,13 @@ const Projects = () => {
       image: expenseTrackerImg,
       github: "https://github.com/Sakshibhume/EXpenses_budget-Manager",
     }
-  ]
+  ];
 
   return (
     <div className="projects-scroll-container">
       <div className="projects-page">
         <div className="projects-header">
           <h1>My Projects</h1>
-          
         </div>
         
         <div className="projects-list">
@@ -54,7 +63,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
